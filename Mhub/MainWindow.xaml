@@ -1,0 +1,42 @@
+﻿<Window x:Class="Mhub.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mhub"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="105*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBox x:Name="Search" Text="asdasd" Width="300" Margin="10 5 5 5" GotMouseCapture="Search_GotMouseCapture"  />
+            <ComboBox Margin="5" Width="130"/>
+            <ComboBox Margin="5" Width="130"/>
+        </StackPanel>
+        <ListBox Grid.Row="1" Margin="10 0 10 20">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <Image Source="Resource\picture.png"/>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NameType}"/>
+                                <TextBlock Text="|"/>
+                                <TextBlock Text="{Binding NameProduct}"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding id}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Материалы: "/>
+                                <TextBlock Text="{Binding NameMaterial}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <TextBlock Text="Стоимость" HorizontalAlignment="Right"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
