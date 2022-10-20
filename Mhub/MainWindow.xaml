@@ -16,27 +16,6 @@
             <ComboBox Margin="5" Width="130"/>
             <ComboBox Margin="5" Width="130"/>
         </StackPanel>
-        <ListBox Grid.Row="1" Margin="10 0 10 20">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <DockPanel>
-                        <Image Source="Resource\picture.png"/>
-                        <StackPanel Orientation="Vertical">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding NameType}"/>
-                                <TextBlock Text="|"/>
-                                <TextBlock Text="{Binding NameProduct}"/>
-                            </StackPanel>
-                            <TextBlock Text="{Binding id}"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Материалы: "/>
-                                <TextBlock Text="{Binding NameMaterial}"/>
-                            </StackPanel>
-                        </StackPanel>
-                        <TextBlock Text="Стоимость" HorizontalAlignment="Right"/>
-                    </DockPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <StackPanel x:Name="mainArea" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top"></StackPanel>
     </Grid>
 </Window>
