@@ -7,15 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="105*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBox x:Name="Search" Text="asdasd" Width="300" Margin="10 5 5 5" GotMouseCapture="Search_GotMouseCapture"  />
-            <ComboBox Margin="5" Width="130"/>
-            <ComboBox Margin="5" Width="130"/>
-        </StackPanel>
-        <StackPanel x:Name="mainArea" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top"></StackPanel>
+        <TextBox Grid.Column="0" x:Name="Search" Text="asdasd" Margin="10 5 5 5" GotMouseCapture="Search_GotMouseCapture"/>
+        <ComboBox Grid.Column="2" Margin="5" />
+        <ComboBox Grid.Column="1" Margin="5" />
+        
+        <StackPanel x:Name="mainArea" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3"></StackPanel>
     </Grid>
 </Window>
